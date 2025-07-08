@@ -14,8 +14,8 @@
       color: #12130F;
     }
     section {
-      padding: 100px 0;
-      min-height: 100vh;
+      padding: 30px 0;
+      min-height: auto;
     }
     #inicio { background-color: #F9F8F8; }
     #nosotros { background-color: #e9ecef; }
@@ -41,6 +41,19 @@
 .logo-hover-effect:hover {
   transform: scale(2.5);
   z-index: 10;
+}
+.navbar {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.navbar-brand img {
+  height: 75px; /* tamaño del header */
+}
+
+section {
+  padding: 30px 0;
+  scroll-margin-top: 120px; /* adjust to your navbar height */
 }
   </style>
 </head>
@@ -87,7 +100,7 @@
 </div>
 
   <!-- Text block below -->
-  <div class="text-center" style="background-color: #F9F8F8; color: #12130F; padding: 60px 20px;">
+  <div class="text-center" style="background-color: #355691; color: #12130F; padding: 60px 20px;">
     <div class="container">
       <p style="max-width: 1000px; margin: 0 auto; font-size: 1.25rem;">
         En Comercializadora MTD somos expertos en importar, posicionar y distribuir productos innovadores a través de una red de más de 1,500 minoristas. Desde 2016, conectamos marcas globales con el consumidor mexicano, combinando experiencia en marketing, logística y desarrollo comercial.
@@ -98,9 +111,9 @@
   <!-- Stats block -->
 <div style="background-color: #D2B48C; color: #12130F; padding: 50px 20px;">
   <div class="container d-flex flex-column flex-lg-row justify-content-center align-items-center gap-4 text-center">
-    <div style="font-size: 2.5rem;"><strong>9</strong> AÑOS DE EXPERIENCIA</div>
-    <div style="font-size: 2.5rem;"><strong>10</strong> PRINCIPALES CADENAS NACIONALES</div>
-    <div style="font-size: 2.5rem;"><strong>+3500</strong> TIENDAS A NIVEL NACIONAL</div>
+    <div style="font-size: 2rem;"><strong>+9</strong> AÑOS DE EXPERIENCIA</div>
+    <div style="font-size: 2rem;"><strong>10</strong> PRINCIPALES CADENAS NACIONALES</div>
+    <div style="font-size: 2rem;"><strong>+3500</strong> TIENDAS A NIVEL NACIONAL</div>
   </div>
 </div>
 
@@ -114,26 +127,28 @@
       <div class="col-lg-6 d-flex" style="background-color: #12130F;">
         <div style="flex: 1;"></div>
       </div>
-      <!-- Right: Text (main + mission/vision) -->
+      <!-- Right: Text -->
       <div class="col-lg-6 d-flex align-items-center" style="padding: 60px;">
         <div>
           <p>
             Comercializadora MTD S.A. de C.V. es una empresa dedicada a la importación y gestión de marcas, establecida en 2016 en Monterrey, México. Nos enfocamos en la distribución de productos innovadores y de calidad, construyendo relaciones sólidas con nuestros socios comerciales a través de un servicio al cliente excepcional, tiempos de entrega confiables y precios accesibles. Contamos con una red de distribución que abarca más de 1,500 minoristas en todo el país. Ayudamos a posicionar marcas internacionales cuidadosamente seleccionadas con alto potencial en el mercado mexicano, gracias a nuestro profundo conocimiento del mercado y las preferencias del consumidor. Nuestro equipo interno se especializa en marketing y construcción de marca, apoyando a nuestros socios para llegar a minoristas de alta calidad y alcanzar el éxito en México. Para los dueños de marcas, garantizamos un aumento en la conciencia y valor de marca, crecimiento en ventas y una relación de confianza basada en el entendimiento mutuo.
           </p>
-          <div class="row mt-4" style="color: #12130F;">
-            <div class="col-md-6 mb-3">
-              <div style="background-color: #355691; padding: 20px; border-radius: 8px; height: 100%;">
-                <strong>MISIÓN:</strong><br>
-                Conectar a los consumidores mexicanos con marcas internacionales innovadoras y de alta calidad en las categorías de cosméticos y cuidado personal, a través de servicios excepcionales de distribución, marketing y gestión de marca. Estamos comprometidos con la creación de alianzas duraderas basadas en la confianza, el desempeño y un profundo entendimiento del mercado.
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div style="background-color: #355691; padding: 20px; border-radius: 8px; height: 100%;">
-                <strong>VISIÓN:</strong><br>
-                Ser la puerta de entrada líder en México para marcas globales de belleza y cuidado personal, reconocida por nuestra excelencia en construcción de marca, alcance nacional y capacidad para convertir productos emergentes en marcas reconocidas por los consumidores.
-              </div>
-            </div>
-          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Misión y Visión block at the bottom -->
+    <div class="row mt-0" style="color: #12130F; padding: 40px;">
+      <div class="col-md-6 mb-3">
+        <div style="background-color: #355691; padding: 20px; border-radius: 8px; height: 100%;">
+          <strong>MISIÓN:</strong><br>
+          Conectar a los consumidores mexicanos con marcas internacionales innovadoras y de alta calidad en las categorías de cosméticos y cuidado personal, a través de servicios excepcionales de distribución, marketing y gestión de marca. Estamos comprometidos con la creación de alianzas duraderas basadas en la confianza, el desempeño y un profundo entendimiento del mercado.
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div style="background-color: #355691; padding: 20px; border-radius: 8px; height: 100%;">
+          <strong>VISIÓN:</strong><br>
+          Ser la puerta de entrada líder en México para marcas globales de belleza y cuidado personal, reconocida por nuestra excelencia en construcción de marca, alcance nacional y capacidad para convertir productos emergentes en marcas reconocidas por los consumidores.
         </div>
       </div>
     </div>
@@ -141,7 +156,7 @@
 </section>
 
 
-<section id="quehacemos" style="background-color: #F9F8F8; color: #F9F8F8; padding: 150px 0; position: relative; min-height: 50vh">
+<section id="quehacemos" style="background-color: #355691; color: #355691; padding: 20px 0; position: relative;">
   
   <!-- Horizontal line -->
   <div style="background-color: #D2B48C; width: 100%; height: 400px; position: absolute; top: 50%; transform: translateY(-50%);"></div>
@@ -208,12 +223,12 @@
   </div>
 </section>
 
-<section id="marcas" style="background-color: #355691; color: #12130F; padding: 175px 0; position: relative;">
+<section id="marcas" style="background-color: #355691; color: #12130F; padding: 50px 0; position: relative;">
   <!-- Horizontal line -->
   <div style="background-color: #D2B48C; width: 100%; height: 525px; position: absolute; top: 50%; transform: translateY(-50%);"></div>
 
   <div class="container position-relative" style="z-index: 1;">
-    <div class="row align-items-center justify-content-center" style="min-height: 525px; transform: translateY(50px);">
+    <div class="row align-items-center justify-content-center" style="min-height: 525px;">
       <!-- Image placeholder -->
       <div class="col-lg-6 d-flex justify-content-center align-items-center">
         <div style="background-color: #12130F; width: 400px; height: 400px;"></div>
@@ -282,11 +297,23 @@
       </div>
 
       <!-- Controls -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#canalesCarousel" data-bs-slide="prev">
+      <button 
+        class="carousel-control-prev" 
+        type="button" 
+        data-bs-target="#canalesCarousel" 
+        data-bs-slide="prev"
+        style="top: 25%; transform: translateY(-50%);"
+      >
         <span class="carousel-control-prev-icon" style="filter: invert(39%) sepia(96%) saturate(7471%) hue-rotate(357deg) brightness(100%) contrast(119%);"></span>
         <span class="visually-hidden">Anterior</span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#canalesCarousel" data-bs-slide="next">
+      <button 
+        class="carousel-control-next" 
+        type="button" 
+        data-bs-target="#canalesCarousel" 
+        data-bs-slide="next"
+        style="top: 25%; transform: translateY(-50%);"
+      >
         <span class="carousel-control-next-icon" style="filter: invert(39%) sepia(96%) saturate(7471%) hue-rotate(357deg) brightness(100%) contrast(119%);"></span>
         <span class="visually-hidden">Siguiente</span>
       </button>
