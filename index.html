@@ -1,63 +1,141 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>MTD</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Gabarito&family=Gantari&display=swap" rel="stylesheet">
-  <!-- Animations -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Gabarito', 'Gantari', sans-serif;
-      color: #12130F;
-    }
-    section {
-      padding: 30px 0;
-      min-height: auto;
-    }
-    #inicio { background-color: #F9F8F8; }
-    #nosotros { background-color: #e9ecef; }
-    #quehacemos { background-color: #dee2e6; }
-    #marcas { background-color: #f8f9fa; }
-    #canales { background-color: #ced4da; }
-    .navbar {
-      background-color: #355691 !important;
-    }
-    .nav-link {
-      color: #F9F8F8 !important;
-    }
-    .nav-link:hover {
-      color: #1c1c1c !important;
-    }
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+<style>
+  body {
+    font-family: 'Gabarito', 'Gantari', sans-serif;
+    color: #12130F;
+    overflow-x: hidden;
+  }
+  section {
+    padding: 30px 0;
+    min-height: auto;
+    scroll-margin-top: 80px;
+  }
+  .navbar {
+    background-color: #b7b7b7 !important;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  .nav-link {
+    color: #F9F8F8 !important;
+  }
+  .nav-link:hover {
+    color: #1c1c1c !important;
+  }
+  .logo-hover-effect {
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 1;
+  }
+  .logo-hover-effect:hover {
+    transform: scale(2.5);
+    z-index: 10;
+  }
+  .navbar-brand img {
+    height: 80px;
+  }
 
-.logo-hover-effect {
-  transition: transform 0.3s ease;
-  position: relative;
-  z-index: 1;
+  /* Make sure no row overflows */
+  .row {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  .container,
+  .container-fluid {
+    overflow-x: hidden;
+  }
+
+  /* Carousel arrows default (desktop) */
+  .carousel-control-prev,
+  .carousel-control-next {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+  }
+  .carousel-control-prev {
+    left: -80px;
+  }
+  .carousel-control-next {
+    right: -80px;
+  }
+
+  /* Carousel arrows on mobile */
+  @media (max-width: 768px) {
+    .carousel-control-prev {
+      left: 10px;
+    }
+    .carousel-control-next {
+      right: 10px;
+    }
+  }
+
+  /* Titles and text adjustments on mobile */
+@media (max-width: 768px) {
+  /* Titles adjustments for mobile */
+  #nosotros h1,
+  #quehacemos h2,
+  #marcas h2,
+  #canales h2,
+  #contacto h2 {
+    font-size: 2.2rem !important;
+    text-align: center !important;
+    line-height: 1.2 !important;
+  }
+
+  #nosotros h2 {
+    font-size: 1.8rem !important;
+    text-align: center !important;
+  }
+
+  #marcas h3 {
+    font-size: 1.5rem !important;
+    text-align: center !important;
+  }
+
+  #contacto p {
+    font-size: 1rem !important;
+    text-align: center !important;
+  }
+
+  /* Status blocks in NOSOTROS */
+  #nosotros .container.d-flex {
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+
+  #nosotros .container.d-flex div div:first-child {
+    font-size: 5rem !important;
+  }
+
+  #nosotros .container.d-flex div div:last-child {
+    font-size: 1.2rem !important;
+  }
+
+  /* Carousel images and arrows fixes (optional, if needed) */
+  #canales .carousel-item .col-4 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+
+  #canales img {
+    max-width: 140px !important;
+    margin: 0 auto;
+  }
 }
 
-.logo-hover-effect:hover {
-  transform: scale(2.5);
-  z-index: 10;
-}
-.navbar {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
 
-.navbar-brand img {
-  height: 60px; /* tamaño del header */
-}
-
-section {
-  padding: 30px 0;
-  scroll-margin-top: 80px; /* adjust to your navbar height */
-}
-  </style>
+</style>
 </head>
-
 <body>
 
 <!-- Navbar -->
@@ -89,9 +167,9 @@ section {
   <div class="d-flex align-items-center justify-content-center text-center" 
        style="background-image: url('img/PRIMERAIMAGEN.jpg'); background-size: cover; background-position: center; color: #F9F8F8; min-height: 100vh;">
     <div class="container" style="margin-top: 120px;">
-      <h1 style="font-size: 3rem; font-weight: bold;">
-        "Forjamos alianzas duraderas con un servicio excepcional, entregas confiables y productos que conectan con el consumidor."
-      </h1>
+<h1 style="font-size: 3rem; font-weight: bold;" data-aos="fade-up" data-aos-duration="2000">
+  "Forjamos alianzas duraderas con un servicio excepcional, entregas confiables y productos que conectan con el consumidor."
+</h1>
     </div>
   </div>
 </section>
@@ -114,15 +192,15 @@ comercial.
     <div style="background-color: #b7b7b7; color: #f7f7f7; padding: 60px 20px;">
       <div class="container d-flex flex-column flex-lg-row justify-content-center align-items-center gap-5 text-center">
         <div>
-          <div style="font-size: 10rem; font-weight: bold;">+9</div>
+<div style="font-size: 10rem; font-weight: bold;" class="count-up" data-count="9" data-plus>0</div>
           <div style="font-size: 1.5rem;">AÑOS DE EXPERIENCIA</div>
         </div>
         <div>
-          <div style="font-size: 10rem; font-weight: bold;">+3500</div>
+<div style="font-size: 10rem; font-weight: bold;" class="count-up" data-count="3500" data-plus>0</div>
           <div style="font-size: 1.5rem;">TIENDAS A NIVEL NACIONAL</div>
         </div>
         <div>
-          <div style="font-size: 10rem; font-weight: bold;">10</div>
+<div style="font-size: 10rem; font-weight: bold;" class="count-up" data-count="10">0</div>
           <div style="font-size: 1.5rem;">PRINCIPALES CADENAS NACIONALES</div>
         </div>
       </div>
@@ -173,50 +251,56 @@ comercial.
 <section id="quehacemos" style="background-color: #f7f7f7; color: #1c1c1c; padding: 100px 0;">
   <div class="container position-relative">
     <h2 class="mb-5" style="font-size: 8rem; font-weight: bold; text-align: left;">QUÉ HACEMOS</h2>
-    <div id="quehacemosCarousel" class="carousel slide">
+    <div id="quehacemosCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
       <div class="carousel-inner">
 
         <!-- Slide 1 -->
-<div class="carousel-item active">
-  <div class="row align-items-center">
-    <div class="col-lg-6 mb-4 mb-lg-0 d-flex justify-content-center align-items-center">
-      <img src="img/QueHacemos1.jpeg" alt="Qué Hacemos 1" style="width: 100%; height: auto; object-fit: cover;">
-    </div>
-    <div class="col-lg-6">
-      <p>Ayudamos a distribuir marcas internacionales cuidadosamente seleccionadas que tienen el potencial de convertirse en líderes en el mercado mexicano.</p>
-    </div>
-  </div>
-</div>
+        <div class="carousel-item active">
+          <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0 d-flex justify-content-center align-items-center">
+              <img src="img/QueHacemos1.jpeg" alt="Qué Hacemos 1" style="width: 100%; height: auto; object-fit: cover;">
+            </div>
+            <div class="col-lg-6">
+              <p style="font-size: 2rem; text-align: justify;">
+                Ayudamos a distribuir marcas internacionales cuidadosamente seleccionadas que tienen el potencial de convertirse en líderes en el mercado mexicano.
+              </p>
+            </div>
+          </div>
+        </div>
 
         <!-- Slide 2 -->
-<div class="carousel-item">
-  <div class="row align-items-center">
-    <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0 d-flex justify-content-center align-items-center">
-      <img src="img/QueHacemos2.jpeg" alt="Qué Hacemos 2" style="width: 100%; height: auto; object-fit: cover;">
-    </div>
-    <div class="col-lg-6 order-lg-1">
-      <p>Nuestro amplio conocimiento del mercado nos permite llevar sus productos a minoristas en todo el país, garantizando una comprensión profunda de las preferencias del consumidor.</p>
-    </div>
-  </div>
-</div>
+        <div class="carousel-item">
+          <div class="row align-items-center">
+            <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0 d-flex justify-content-center align-items-center">
+              <img src="img/QueHacemos2.jpeg" alt="Qué Hacemos 2" style="width: 100%; height: auto; object-fit: cover;">
+            </div>
+            <div class="col-lg-6 order-lg-1">
+              <p style="font-size: 2rem; text-align: justify;">
+                Nuestro amplio conocimiento del mercado nos permite llevar sus productos a minoristas en todo el país, garantizando una comprensión profunda de las preferencias del consumidor.
+              </p>
+            </div>
+          </div>
+        </div>
 
         <!-- Slide 3 -->
-<div class="carousel-item">
-  <div class="row align-items-center">
-    <div class="col-lg-6 mb-4 mb-lg-0 d-flex justify-content-center align-items-center">
-      <img src="img/QueHacemos3.jpeg" alt="Qué Hacemos 3" style="width: 100%; height: auto; object-fit: cover;">
-    </div>
-    <div class="col-lg-6">
-      <p>Nuestro equipo interno se especializa en marketing y construcción de marca, asistiendo a marcas para llegar a minoristas de alta calidad y lograr éxito en México.</p>
-    </div>
-  </div>
-</div>
+        <div class="carousel-item">
+          <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0 d-flex justify-content-center align-items-center">
+              <img src="img/QueHacemos3.jpeg" alt="Qué Hacemos 3" style="width: 100%; height: auto; object-fit: cover;">
+            </div>
+            <div class="col-lg-6">
+              <p style="font-size: 2rem; text-align: justify;">
+                Nuestro equipo interno se especializa en marketing y construcción de marca, asistiendo a marcas para llegar a minoristas de alta calidad y lograr éxito en México.
+              </p>
+            </div>
+          </div>
+        </div>
 
       </div>
     </div>
 
     <!-- Controls -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#quehacemosCarousel" data-bs-slide="prev" style="position: absolute; top: 50%; transform: translateY(-50%); left: -120px;">
+    <button class="carousel-control-prev" type="button" data-bs-target="#quehacemosCarousel" data-bs-slide="prev" style="position: absolute; top: 50%; transform: translateY(-50%); left: -100px;">
       <span class="carousel-control-prev-icon" style="filter: invert(12%) sepia(0%) saturate(0%) hue-rotate(170deg) brightness(100%) contrast(100%); width: 70px; height: 70px;"></span>
       <span class="visually-hidden">Anterior</span>
     </button>
@@ -235,8 +319,11 @@ comercial.
 
     <div class="row align-items-center">
       <!-- Image -->
-<div class="col-lg-6 d-flex justify-content-center align-items-center">
-  <img src="img/BIONIBEAUTY.jpg" alt="Bioni Beauty" style="max-width: 60%; height: auto; object-fit: cover;">
+<div class="col-lg-6 d-flex justify-content-center align-items-center" data-aos="fade-right" data-aos-duration="1750">
+  <img 
+    src="img/BIONIBEAUTY.jpg" 
+    alt="Bioni Beauty" 
+    style="width: 100%; max-width: 450px; height: 450px; object-fit: cover; border-radius: 8px; margin: 0 auto;">
 </div>
       <!-- Text -->
       <div class="col-lg-6 d-flex flex-column justify-content-center">
@@ -244,72 +331,97 @@ comercial.
         <p style="font-size: 1.5rem;">
           Una marca que reúne lo mejor en cuidado personal, skincare y estilo, combinando innovación, tendencias y bienestar en un solo lugar.
         </p>
-        <a href="#" class="btn mt-3" style="background-color: #1c1c1c; color: #f7f7f7; font-weight: bold; font-size: 1.2rem; padding: 12px 36px; border-radius: 8px; width: 200px;">Visitar Tienda</a>
+        <a href="https://purederm.mx" target="_blank" class="btn mt-3" style="background-color: #1c1c1c; color: #f7f7f7; font-weight: bold; font-size: 1.2rem; padding: 12px 36px; border-radius: 8px; width: 200px;">
+  Visitar Tienda
+        </a>
       </div>
     </div>
   </div>
 </section>
 
 
-<section id="canales" style="background-color: #F9F8F8; color: #12130F; padding: 80px 0; min-height: 40vh">
-  <div class="container">
-    <h2 class="text-center mb-5">CANALES DE DISTRIBUCIÓN</h2>
-    <div id="canalesCarousel" class="carousel slide" data-bs-ride="carousel">
+<section id="canales" style="background-color: #f7f7f7; color: #1c1c1c; padding: 80px 0;">
+  <div class="container-fluid px-0">
+    <!-- Title -->
+    <div style="background-color: #b7b7b7; color: #f7f7f7; width: 100%; text-align: center; padding: 20px 50px;">
+      <h2 style="font-size: 6rem; font-weight: bold; margin: 0;">CANALES DE<br> DISTRIBUCIÓN</h2>
+    </div>
+
+    <!-- Carousel -->
+    <div id="canalesCarousel" class="carousel slide mt-5" data-bs-ride="carousel" data-bs-interval="5000">
       <div class="carousel-inner">
 
-        <!-- Slide 1: first 5 -->
+        <!-- Slide 1 -->
         <div class="carousel-item active">
-          <div class="row">
-            <div class="col-6 col-md-2 offset-md-1 mb-4 text-center" style="overflow: visible; min-height: 180px;">
-              <img src="img/1.png" alt="CASA LEY" class="img-fluid logo-hover-effect" style="max-width: 100px; padding: 20px;">
+          <div class="row justify-content-center align-items-center" style="min-height: 350px;">
+            <div class="col-4 text-center">
+              <img src="img/1.png" alt="CASA LEY" class="img-fluid logo-hover-effect" style="max-width: 180px; padding: 20px;">
             </div>
-            <div class="col-6 col-md-2 mb-4 text-center" style="overflow: visible; min-height: 180px;">
-              <img src="img/2.png" alt="CHEDRAUI" class="img-fluid logo-hover-effect" style="max-width: 100px; padding: 30px;">
+            <div class="col-4 text-center">
+              <img src="img/2.png" alt="CHEDRAUI" class="img-fluid logo-hover-effect" style="max-width: 180px; padding: 20px;">
             </div>
-            <div class="col-6 col-md-2 mb-4 text-center" style="overflow: visible; min-height: 180px;">
-              <img src="img/3.png" alt="CITY MARKET" class="img-fluid logo-hover-effect" style="max-width: 100px; padding: 20px;">
-            </div>
-            <div class="col-6 col-md-2 mb-4 text-center" style="overflow: visible; min-height: 180px;">
-              <img src="img/4.png" alt="FARMACIAS BENAVIDES" class="img-fluid logo-hover-effect" style="max-width: 100px; padding: 20px;">
-            </div>
-            <div class="col-6 col-md-2 mb-4 text-center" style="overflow: visible; min-height: 180px;">
-              <img src="img/5.png" alt="FARMACIAS DEL AHORRO" class="img-fluid logo-hover-effect" style="max-width: 100px; padding: 20px;">
+            <div class="col-4 text-center">
+              <img src="img/3.png" alt="CITY MARKET" class="img-fluid logo-hover-effect" style="max-width: 180px; padding: 20px;">
             </div>
           </div>
         </div>
 
-        <!-- Slide 2: next 5 -->
+        <!-- Slide 2 -->
         <div class="carousel-item">
-          <div class="row">
-            <div class="col-6 col-md-2 offset-md-1 mb-4 text-center" style="overflow: visible; min-height: 180px;">
-              <img src="img/6.png" alt="FRESKO" class="img-fluid logo-hover-effect" style="max-width: 100px; padding: 20px;">
+          <div class="row justify-content-center align-items-center" style="min-height: 350px;">
+            <div class="col-4 text-center">
+              <img src="img/4.png" alt="FARMACIAS BENAVIDES" class="img-fluid logo-hover-effect" style="max-width: 180px; padding: 20px;">
             </div>
-            <div class="col-6 col-md-2 mb-4 text-center" style="overflow: visible; min-height: 180px;">
-              <img src="img/7.png" alt="HEB" class="img-fluid logo-hover-effect" style="max-width: 100px; padding: 20px;">
+            <div class="col-4 text-center">
+              <img src="img/5.png" alt="FARMACIAS DEL AHORRO" class="img-fluid logo-hover-effect" style="max-width: 180px; padding: 20px;">
             </div>
-            <div class="col-6 col-md-2 mb-4 text-center" style="overflow: visible; min-height: 180px;">
-              <img src="img/8.png" alt="LA COMER" class="img-fluid logo-hover-effect" style="max-width: 100px; padding: 20px;">
+            <div class="col-4 text-center">
+              <img src="img/6.png" alt="FRESKO" class="img-fluid logo-hover-effect" style="max-width: 180px; padding: 20px;">
             </div>
-            <div class="col-6 col-md-2 mb-4 text-center" style="overflow: visible; min-height: 180px;">
-              <img src="img/9.png" alt="LIVERPOOL" class="img-fluid logo-hover-effect" style="max-width: 100px; padding: 20px;">
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+          <div class="row justify-content-center align-items-center" style="min-height: 350px;">
+            <div class="col-4 text-center">
+              <img src="img/7.png" alt="HEB" class="img-fluid logo-hover-effect" style="max-width: 180px; padding: 20px;">
             </div>
-            <div class="col-6 col-md-2 mb-4 text-center" style="overflow: visible; min-height: 180px;">
-              <img src="img/10.png" alt="WALMART" class="img-fluid logo-hover-effect" style="max-width: 100px; padding: 20px;">
+            <div class="col-4 text-center">
+              <img src="img/8.png" alt="LA COMER" class="img-fluid logo-hover-effect" style="max-width: 180px; padding: 20px;">
+            </div>
+            <div class="col-4 text-center">
+              <img src="img/9.png" alt="LIVERPOOL" class="img-fluid logo-hover-effect" style="max-width: 180px; padding: 20px;">
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="carousel-item">
+          <div class="row justify-content-center align-items-center" style="min-height: 350px;">
+            <div class="col-4 text-center">
+              <img src="img/10.png" alt="WALMART" class="img-fluid logo-hover-effect" style="max-width: 180px; padding: 20px;">
+            </div>
+            <div class="col-4 text-center">
+              <img src="img/1.png" alt="CASA LEY" class="img-fluid logo-hover-effect" style="max-width: 180px; padding: 20px;">
+            </div>
+            <div class="col-4 text-center">
+              <img src="img/2.png" alt="CHEDRAUI" class="img-fluid logo-hover-effect" style="max-width: 180px; padding: 20px;">
             </div>
           </div>
         </div>
 
       </div>
 
-      <!-- Controls -->
+      <!-- Arrows -->
       <button 
         class="carousel-control-prev" 
         type="button" 
         data-bs-target="#canalesCarousel" 
         data-bs-slide="prev"
-        style="top: 25%; transform: translateY(-50%);"
+        style="top: 50%; transform: translateY(-50%); left: -100px;"
       >
-        <span class="carousel-control-prev-icon" style="filter: invert(39%) sepia(96%) saturate(7471%) hue-rotate(357deg) brightness(100%) contrast(119%);"></span>
+        <span class="carousel-control-prev-icon" style="filter: invert(0%) brightness(0%); width: 60px; height: 60px;"></span>
         <span class="visually-hidden">Anterior</span>
       </button>
       <button 
@@ -317,36 +429,35 @@ comercial.
         type="button" 
         data-bs-target="#canalesCarousel" 
         data-bs-slide="next"
-        style="top: 25%; transform: translateY(-50%);"
+        style="top: 50%; transform: translateY(-50%); right: -100px;"
       >
-        <span class="carousel-control-next-icon" style="filter: invert(39%) sepia(96%) saturate(7471%) hue-rotate(357deg) brightness(100%) contrast(119%);"></span>
+        <span class="carousel-control-next-icon" style="filter: invert(0%) brightness(0%); width: 60px; height: 60px;"></span>
         <span class="visually-hidden">Siguiente</span>
       </button>
-
     </div>
   </div>
 </section>
 
-<section id="contacto" style="background-color: #f7f7f7; color: #1c1c1c; padding: 80px 0;">
+<hr style="border: none; height: 50px; background-color: #b7b7b7; margin: 0;">
+
+<section id="contacto" style="background-color: #f7f7f7; color: #1c1c1c; padding: 100px 0;">
   <div class="container">
-    <h2 class="text-center mb-5">CONTACTO</h2>
-    <div class="row justify-content-center">
-      <div class="col-md-8">
-        <form>
-          <div class="mb-3">
-            <label for="name" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="name" placeholder="Tu nombre">
-          </div>
-          <div class="mb-3">
-            <label for="email" class="form-label">Correo electrónico</label>
-            <input type="email" class="form-control" id="email" placeholder="Tu correo">
-          </div>
-          <div class="mb-3">
-            <label for="message" class="form-label">Mensaje</label>
-            <textarea class="form-control" id="message" rows="5" placeholder="Escribe tu mensaje aquí"></textarea>
-          </div>
-          <button type="submit" class="btn" style="background-color: #1c1c1c; color: #f7f7f7; padding: 10px 30px; font-weight: bold;">Enviar</button>
-        </form>
+    <!-- Title -->
+    <h2 style="font-size: 8rem; font-weight: bold; color: #b7b7b7; text-align: center;">CONTACTO</h2>
+
+    <!-- Intro Text -->
+    <p style="font-size: 2rem; max-width: 1000px; margin: 30px auto; text-align: center;">
+      Si tienes preguntas, propuestas de colaboración, interés en asociaciones o deseas compartir ideas sobre belleza, te invitamos a escribirnos mediante nuestro formulario de contacto. Nos encanta colaborar y estamos disponibles para explorar oportunidades en el mundo de la belleza. Valoramos mucho tu mensaje y te responderemos lo antes posible.
+    </p>
+
+    <!-- Contact Info -->
+    <div class="text-center mt-5" style="font-size: 2rem;">
+      <p><strong>Email:</strong> <a href="mailto:contacto@tudominio.com" style="color: #1c1c1c; text-decoration: underline;">contacto@tudominio.com</a></p>
+      <p><strong>Teléfono:</strong> +52 81 1234 5678</p>
+      <div class="mt-4">
+        <a href="https://www.instagram.com/tuempresa" target="_blank" style="margin: 0 20px; color: #1c1c1c; font-size: 3rem;"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.facebook.com/tuempresa" target="_blank" style="margin: 0 20px; color: #1c1c1c; font-size: 3rem;"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.linkedin.com/company/tuempresa" target="_blank" style="margin: 0 20px; color: #1c1c1c; font-size: 3rem;"><i class="bi bi-linkedin"></i></a>
       </div>
     </div>
   </div>
@@ -368,6 +479,40 @@ comercial.
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
   AOS.init();
+</script>
+<script>
+  function animateCount(el, start, end, duration, addPlus) {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      el.innerText = Math.floor(progress * (end - start) + start);
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      } else if (addPlus) {
+        el.innerText = el.innerText + '+';
+      }
+    };
+    window.requestAnimationFrame(step);
+  }
+
+  function isInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return rect.top <= (window.innerHeight || document.documentElement.clientHeight);
+  }
+
+  let animated = false;
+  window.addEventListener('scroll', function() {
+    const counters = document.querySelectorAll('.count-up');
+    if (!animated && counters.length && isInViewport(counters[0])) {
+      counters.forEach(counter => {
+        const end = parseInt(counter.getAttribute('data-count'));
+        const addPlus = counter.hasAttribute('data-plus');
+        animateCount(counter, 0, end, 2000, addPlus);
+      });
+      animated = true;
+    }
+  });
 </script>
 </body>
 </html>
