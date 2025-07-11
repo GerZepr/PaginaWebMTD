@@ -9,30 +9,25 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 <style>
+  html, body {
+    overflow-x: hidden;
+  }
 
-    html {
-    overflow-y: scroll; /* Always show scrollbar to avoid shift during animations */
+  html.aos-animating, body.aos-animating {
+    overflow-y: hidden !important;
+  }
+
+  #inicio .container[data-aos] {
+    overflow: hidden;
   }
 
   body {
     font-family: 'Gabarito', 'Gantari', sans-serif;
     color: #12130F;
-    overflow-x: hidden;
-  }
-
-  html {
-    overflow-y: auto;
-  }
-
-  body {
-    font-family: 'Gabarito', 'Gantari', sans-serif;
-    color: #12130F;
-    overflow-x: hidden;
   }
 
   section {
     padding: 30px 0;
-    min-height: auto;
     scroll-margin-top: 80px;
   }
 
@@ -75,7 +70,7 @@
     overflow-x: hidden;
   }
 
-  /* Carousel arrows (now always inside) */
+  /* Carousel arrows default style */
   .carousel-control-prev,
   .carousel-control-next {
     top: 50%;
@@ -83,38 +78,81 @@
     width: 60px;
     height: 60px;
   }
-  .carousel-control-prev {
-    left: 15px !important;
-  }
-  .carousel-control-next {
-    right: 15px !important;
+
+  /* Mobile view: arrows closer inside */
+  @media (max-width: 768px) {
+    .carousel-control-prev {
+      left: 15px !important;
+    }
+    .carousel-control-next {
+      right: 15px !important;
+    }
   }
 
-  /* Titles and text adjustments on mobile */
+  /* Desktop view: arrows black and separated */
+  @media (min-width: 769px) {
+    .carousel-control-prev {
+      left: -60px !important;
+    }
+    .carousel-control-next {
+      right: -60px !important;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      filter: invert(0%) brightness(0%);
+    }
+  }
+
+  /* Mobile: make all text smaller */
   @media (max-width: 768px) {
+    body,
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    a,
+    button {
+      font-size: 90% !important;
+    }
+
     #nosotros h1,
     #quehacemos h2,
     #marcas h2,
     #canales h2,
     #contacto h2 {
-      font-size: 2.2rem !important;
+      font-size: 1.8rem !important;
       text-align: center !important;
       line-height: 1.2 !important;
     }
 
     #nosotros h2 {
-      font-size: 1.8rem !important;
-      text-align: center !important;
+      font-size: 1.5rem !important;
     }
 
     #marcas h3 {
-      font-size: 1.5rem !important;
-      text-align: center !important;
+      font-size: 1.5rem !important; /* Slightly larger */
+      margin-bottom: 20px !important; /* Add space below title */
+    }
+
+    #marcas p {
+      font-size: 1.1rem !important; /* Increase paragraph size */
     }
 
     #contacto p {
-      font-size: 1rem !important;
-      text-align: center !important;
+      font-size: 0.9rem !important;
+    }
+
+    .btn {
+      font-size: 0.9rem !important;
+      padding: 10px 24px !important;
+    }
+
+    nav .nav-link {
+      font-size: 1.2rem !important;
     }
 
     /* Status blocks in NOSOTROS */
@@ -131,7 +169,7 @@
       font-size: 1.2rem !important;
     }
 
-    /* Carousel images fix */
+    /* Carousel logos */
     #canales .carousel-item .col-4 {
       flex: 0 0 100% !important;
       max-width: 100% !important;
@@ -141,16 +179,29 @@
       max-width: 140px !important;
       margin: 0 auto;
     }
-    
-  }
-  html, body {
-  overflow-x: hidden;
-}
 
-html.aos-animating, body.aos-animating {
-  overflow-y: hidden !important;
+    /* Separate MARCAS main title */
+    #marcas h2 {
+      margin-bottom: 40px !important;
+    }
+  }
+
+  /* Separate Bioni Beauty title and increase text only on mobile */
+  @media (max-width: 768px) {
+    #marcas h3 {
+      margin-bottom: 20px !important; /* More space below Bioni Beauty title */
+    }
+  }
+  @media (max-width: 768px) {
+  #marcas h3 {
+    margin-top: 30px !important; /* Move the title downward */
+  }
+
+  #marcas p {
+    font-size: 1.3rem !important;
+    line-height: 1.4 !important;
+  }
 }
-  
 </style>
 </head>
 <body>
@@ -432,21 +483,19 @@ comercial.
 
       <!-- Arrows -->
       <button 
-        class="carousel-control-prev" 
-        type="button" 
-        data-bs-target="#canalesCarousel" 
-        data-bs-slide="prev"
-        style="top: 50%; transform: translateY(-50%); left: -100px;"
+  class="carousel-control-prev" 
+  type="button" 
+  data-bs-target="#canalesCarousel" 
+  data-bs-slide="prev">
       >
         <span class="carousel-control-prev-icon" style="filter: invert(0%) brightness(0%); width: 60px; height: 60px;"></span>
         <span class="visually-hidden">Anterior</span>
       </button>
       <button 
-        class="carousel-control-next" 
-        type="button" 
-        data-bs-target="#canalesCarousel" 
-        data-bs-slide="next"
-        style="top: 50%; transform: translateY(-50%); right: -100px;"
+  class="carousel-control-next" 
+  type="button" 
+  data-bs-target="#canalesCarousel" 
+  data-bs-slide="next">
       >
         <span class="carousel-control-next-icon" style="filter: invert(0%) brightness(0%); width: 60px; height: 60px;"></span>
         <span class="visually-hidden">Siguiente</span>
@@ -460,7 +509,7 @@ comercial.
 <section id="contacto" style="background-color: #f7f7f7; color: #1c1c1c; padding: 100px 0;">
   <div class="container">
     <!-- Title -->
-    <h2 style="font-size: 8rem; font-weight: bold; color: #b7b7b7; text-align: center;">CONTACTO</h2>
+    <h2 style="font-size: 8rem; font-weight: bold; color: #1c1c1c; text-align: center;">CONTACTO</h2>
 
     <!-- Intro Text -->
     <p style="font-size: 2rem; max-width: 1000px; margin: 30px auto; text-align: center;">
@@ -469,15 +518,17 @@ comercial.
 
     <!-- Contact Info -->
     <div class="text-center mt-5" style="font-size: 2rem;">
-      <p><strong>Email:</strong> <a href="mailto:contacto@tudominio.com" style="color: #1c1c1c; text-decoration: underline;">contacto@tudominio.com</a></p>
-      <p><strong>Teléfono:</strong> +52 81 1234 5678</p>
-      <div class="mt-4">
-        <a href="https://www.instagram.com/tuempresa" target="_blank" style="margin: 0 20px; color: #1c1c1c; font-size: 3rem;"><i class="bi bi-instagram"></i></a>
-        <a href="https://www.facebook.com/tuempresa" target="_blank" style="margin: 0 20px; color: #1c1c1c; font-size: 3rem;"><i class="bi bi-facebook"></i></a>
-        <a href="https://www.linkedin.com/company/tuempresa" target="_blank" style="margin: 0 20px; color: #1c1c1c; font-size: 3rem;"><i class="bi bi-linkedin"></i></a>
-      </div>
-    </div>
-  </div>
+      <p><strong>Email:</strong> <a href="mailto:contacto@tudominio.com" style="color: #1c1c1c; text-decoration: underline;">info@comtd.com.mx</a></p>
+<div class="mt-4">
+  <a href="https://www.instagram.com/bioni.mx?igsh=MWR0MmpkMjZzenR6aA%3D%3D&utm_source=qr" target="_blank" style="margin: 0 20px; color: #1c1c1c; font-size: 3rem;">
+    <i class="bi bi-instagram"></i>
+  </a>
+  <a href="https://www.tiktok.com/@bioni.mx?_t=ZS-8xvNlBqPwun&_r=1" target="_blank" style="margin: 0 20px; color: #1c1c1c; font-size: 3rem;">
+  <i class="bi bi-tiktok"></i>
+  </a>
+</div>
+</div>
+</div>
 </section>
 
 <!-- Smooth Scroll Script -->
