@@ -77,6 +77,14 @@
     transform: translateY(-50%);
     width: 60px;
     height: 60px;
+    z-index: 10; /* Fix: Put arrows on top */
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    filter: invert(0%) brightness(0%);
+    width: 70px;
+    height: 70px;
   }
 
   /* Mobile view: arrows closer inside */
@@ -92,15 +100,12 @@
   /* Desktop view: arrows black and separated */
   @media (min-width: 769px) {
     .carousel-control-prev {
-      left: -60px !important;
+      left: -20px !important;
+        z-index: 20;
     }
     .carousel-control-next {
-      right: -60px !important;
-    }
-
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon {
-      filter: invert(0%) brightness(0%);
+      right: -20px !important;
+        z-index: 20;
     }
   }
 
@@ -134,12 +139,14 @@
     }
 
     #marcas h3 {
-      font-size: 1.5rem !important; /* Slightly larger */
-      margin-bottom: 20px !important; /* Add space below title */
+      font-size: 1.5rem !important; /* Slightly larger on mobile */
+      margin-top: 30px !important;   /* Move title down from image */
+      margin-bottom: 20px !important;
     }
 
     #marcas p {
-      font-size: 1.1rem !important; /* Increase paragraph size */
+      font-size: 1.3rem !important;
+      line-height: 1.4 !important;
     }
 
     #contacto p {
@@ -185,23 +192,6 @@
       margin-bottom: 40px !important;
     }
   }
-
-  /* Separate Bioni Beauty title and increase text only on mobile */
-  @media (max-width: 768px) {
-    #marcas h3 {
-      margin-bottom: 20px !important; /* More space below Bioni Beauty title */
-    }
-  }
-  @media (max-width: 768px) {
-  #marcas h3 {
-    margin-top: 30px !important; /* Move the title downward */
-  }
-
-  #marcas p {
-    font-size: 1.3rem !important;
-    line-height: 1.4 !important;
-  }
-}
 </style>
 </head>
 <body>
@@ -325,10 +315,14 @@ comercial.
         <!-- Slide 1 -->
         <div class="carousel-item active">
           <div class="row align-items-center">
-            <div class="col-lg-6 mb-4 mb-lg-0 d-flex justify-content-center align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0 d-flex justify-content-center align-items-center"
+                 style="cursor: pointer;"
+                 onclick="document.querySelector('#quehacemosCarousel').carouselNext()">
               <img src="img/QueHacemos1.jpeg" alt="Qué Hacemos 1" style="width: 100%; height: auto; object-fit: cover;">
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-6 d-flex align-items-center"
+                 style="cursor: pointer;"
+                 onclick="document.querySelector('#quehacemosCarousel').carouselNext()">
               <p style="font-size: 2rem; text-align: justify;">
                 Ayudamos a distribuir marcas internacionales cuidadosamente seleccionadas que tienen el potencial de convertirse en líderes en el mercado mexicano.
               </p>
@@ -339,10 +333,14 @@ comercial.
         <!-- Slide 2 -->
         <div class="carousel-item">
           <div class="row align-items-center">
-            <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0 d-flex justify-content-center align-items-center">
+            <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0 d-flex justify-content-center align-items-center"
+                 style="cursor: pointer;"
+                 onclick="document.querySelector('#quehacemosCarousel').carouselNext()">
               <img src="img/QueHacemos2.jpeg" alt="Qué Hacemos 2" style="width: 100%; height: auto; object-fit: cover;">
             </div>
-            <div class="col-lg-6 order-lg-1">
+            <div class="col-lg-6 order-lg-1 d-flex align-items-center"
+                 style="cursor: pointer;"
+                 onclick="document.querySelector('#quehacemosCarousel').carouselNext()">
               <p style="font-size: 2rem; text-align: justify;">
                 Nuestro amplio conocimiento del mercado nos permite llevar sus productos a minoristas en todo el país, garantizando una comprensión profunda de las preferencias del consumidor.
               </p>
@@ -353,10 +351,14 @@ comercial.
         <!-- Slide 3 -->
         <div class="carousel-item">
           <div class="row align-items-center">
-            <div class="col-lg-6 mb-4 mb-lg-0 d-flex justify-content-center align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0 d-flex justify-content-center align-items-center"
+                 style="cursor: pointer;"
+                 onclick="document.querySelector('#quehacemosCarousel').carouselNext()">
               <img src="img/QueHacemos3.jpeg" alt="Qué Hacemos 3" style="width: 100%; height: auto; object-fit: cover;">
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-6 d-flex align-items-center"
+                 style="cursor: pointer;"
+                 onclick="document.querySelector('#quehacemosCarousel').carouselNext()">
               <p style="font-size: 2rem; text-align: justify;">
                 Nuestro equipo interno se especializa en marketing y construcción de marca, asistiendo a marcas para llegar a minoristas de alta calidad y lograr éxito en México.
               </p>
@@ -366,19 +368,18 @@ comercial.
 
       </div>
     </div>
-
-    <!-- Controls -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#quehacemosCarousel" data-bs-slide="prev" style="position: absolute; top: 50%; transform: translateY(-50%); left: -100px;">
-      <span class="carousel-control-prev-icon" style="filter: invert(12%) sepia(0%) saturate(0%) hue-rotate(170deg) brightness(100%) contrast(100%); width: 70px; height: 70px;"></span>
-      <span class="visually-hidden">Anterior</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#quehacemosCarousel" data-bs-slide="next" style="position: absolute; top: 50%; transform: translateY(-50%); right: -120px;">
-      <span class="carousel-control-next-icon" style="filter: invert(12%) sepia(0%) saturate(0%) hue-rotate(170deg) brightness(100%) contrast(100%); width: 70px; height: 70px;"></span>
-      <span class="visually-hidden">Siguiente</span>
-    </button>
-
   </div>
 </section>
+
+<script>
+  // Helper function to move to next
+  Element.prototype.carouselNext = function() {
+    const carousel = bootstrap.Carousel.getInstance(this);
+    if (carousel) {
+      carousel.next();
+    }
+  };
+</script>
 
 <section id="marcas" style="background-color: #b7b7b7; color: #1c1c1c; padding: 80px 0;">
   <div class="container">
