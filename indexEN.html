@@ -77,7 +77,7 @@
     transform: translateY(-50%);
     width: 60px;
     height: 60px;
-    z-index: 10; /* Fix: Put arrows on top */
+    z-index: 10;
   }
 
   .carousel-control-prev-icon,
@@ -87,7 +87,6 @@
     height: 70px;
   }
 
-  /* Mobile view: arrows closer inside */
   @media (max-width: 768px) {
     .carousel-control-prev {
       left: 15px !important;
@@ -97,16 +96,30 @@
     }
   }
 
-  /* Desktop view: arrows black and separated */
   @media (min-width: 769px) {
     .carousel-control-prev {
       left: -20px !important;
-        z-index: 20;
+      z-index: 20;
     }
     .carousel-control-next {
       right: -20px !important;
-        z-index: 20;
+      z-index: 20;
     }
+  }
+
+  /* Ajuste para sección #nosotros (más compacta) */
+  #nosotros .py-5 {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+
+  #nosotros .container.d-flex {
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+  }
+
+  #nosotros .col-lg-6.p-5 {
+    padding: 20px !important;
   }
 
   /* Mobile: make all text smaller */
@@ -139,8 +152,8 @@
     }
 
     #marcas h3 {
-      font-size: 1.5rem !important; /* Slightly larger on mobile */
-      margin-top: 30px !important;   /* Move title down from image */
+      font-size: 1.5rem !important;
+      margin-top: 30px !important;
       margin-bottom: 20px !important;
     }
 
@@ -191,26 +204,35 @@
     #marcas h2 {
       margin-bottom: 40px !important;
     }
-  }
-  .linea-division {
-  position: absolute;
-  right: 0;
-  top: 20%;
-  bottom: 20%;
-  width: 5px;
-  background-color: #f7f7f7;
-  margin: auto;
-}
 
-/* Mobile: la línea se convierte en horizontal */
-@media (max-width: 768px) {
-  .linea-division {
-    position: static;
-    width: 60%;
-    height: 5px;
-    margin: 30px auto;
+    /* Horizontal line for mission/vision only in mobile */
+    #nosotros .mobile-divider {
+      display: block !important;
+      width: 80%;
+      height: 5px;
+      background-color: #f7f7f7;
+      margin: 30px auto;
+    }
   }
-}
+
+  /* Desktop: hide horizontal divider, show vertical */
+  @media (min-width: 769px) {
+    #nosotros .mobile-divider {
+      display: none !important;
+    }
+
+    /* Vertical line for mission/vision */
+    #nosotros .vertical-divider {
+      display: block !important;
+      position: absolute;
+      right: 0;
+      top: 20%;
+      bottom: 20%;
+      width: 5px;
+      background-color: #f7f7f7;
+      margin: auto;
+    }
+  }
 </style>
 </head>
 <body>
@@ -259,7 +281,7 @@
     <div class="text-center py-5" style="background-color: #f7f7f7;">
       <h1 style="font-size: 7rem; font-weight: bold;">ABOUT US</h1>
       <p style="font-size: 2rem; max-width: 1000px; margin: 0 auto;">
-        At Comercializadora MTD, we specialize in importing, positioning, and distributing innovative products through a network of over 1,500 retailers. Since 2016, we have connected global brands with Mexican consumers, combining expertise in marketing, logistics, and commercial development.
+        At Comercializadora MTD, we specialize in importing, positioning, and distributing innovative products through a network of over 3,500 retailers. Since 2016, we have connected global brands with Mexican consumers, combining expertise in marketing, logistics, and commercial development.
       </p>
     </div>
 
@@ -286,7 +308,7 @@
 <div class="row g-0" style="background-color: #f7f7f7; color: #1c1c1c;">
   <!-- Image on the left -->
   <div class="col-lg-6 d-flex justify-content-center align-items-center" style="background-color: #1c1c1c;">
-    <img src="img/NOSOTROS.jpeg" alt="Imagen Nosotros" style="width: 100%; height: auto; object-fit: cover;">
+    <img src="img/NOSOTROS2.jpg" alt="Imagen Nosotros" style="width: 100%; height: auto; object-fit: cover;">
   </div>
 
   <!-- Text on the right -->
@@ -296,29 +318,34 @@
       COMPANY DEDICATED TO<br>BRAND IMPORTATION AND<br>MANAGEMENT
     </h2>
     <p style="font-size: 1.5rem; text-align: justify;">
-      Comercializadora MTD S.A. de C.V. is a company dedicated to brand importation and management, established in 2016 in Monterrey, Mexico. We focus on distributing innovative, high-quality products, building strong relationships with our business partners through exceptional customer service, reliable delivery times, and affordable prices. We have a distribution network that spans over 1,500 retailers nationwide. We help position carefully selected international brands with high potential in the Mexican market, thanks to our deep understanding of the market and consumer preferences. Our in-house team specializes in marketing and brand building, supporting our partners in reaching high-quality retailers and achieving success in Mexico. For brand owners, we guarantee increased brand awareness and value, sales growth, and a trust-based relationship founded on mutual understanding.
+      Comercializadora MTD S.A. de C.V. is a company dedicated to brand importation and management, established in 2016 in Monterrey, Mexico. We focus on distributing innovative, high-quality products, building strong relationships with our business partners through exceptional customer service, reliable delivery times, and affordable prices. We have a distribution network that spans over 3,500 retailers nationwide. We help position carefully selected international brands with high potential in the Mexican market, thanks to our deep understanding of the market and consumer preferences. Our in-house team specializes in marketing and brand building, supporting our partners in reaching high-quality retailers and achieving success in Mexico. For brand owners, we guarantee increased brand awareness and value, sales growth, and a trust-based relationship founded on mutual understanding.
     </p>
   </div>
 </div>
     <!-- Misión y Visión side by side with vertical line -->
 <div class="row g-0" style="background-color: #b7b7b7; color: #1c1c1c;">
-  <!-- Misión -->
+  <!-- Mission -->
   <div class="col-md-6 d-flex flex-column justify-content-start align-items-center text-center p-5 position-relative">
-    <strong style="font-size: 4rem; color: #f7f7f7; margin-bottom: 20px;">MISIÓN</strong>
+    <strong style="font-size: 4rem; color: #f7f7f7; margin-bottom: 20px;">MISSION</strong>
     <p style="font-size: 1.6rem; text-align: justify;">
-      Connect Mexican consumers with innovative and high-quality international brands in cosmetics and personal care through exceptional distribution, marketing, and brand management services. We are committed to creating long-lasting partnerships based on trust, performance, and a deep understanding of the market.
+      To connect Mexican consumers with innovative, high-quality international brands in cosmetics and personal care categories through exceptional distribution, marketing, and brand management services. We are committed to building long-lasting partnerships based on trust, performance, and a deep understanding of the market.
     </p>
-    <!-- Línea vertical (por defecto) -->
-    <div class="linea-division"></div>
+
+    <!-- Vertical line (desktop) -->
+    <div class="vertical-divider"></div>
+
+    <!-- Horizontal line (mobile) -->
+    <div class="mobile-divider"></div>
   </div>
 
-  <!-- Visión -->
+  <!-- Vision -->
   <div class="col-md-6 d-flex flex-column justify-content-start align-items-center text-center p-5">
-    <strong style="font-size: 4rem; color: #f7f7f7; margin-bottom: 20px;">VISIÓN</strong>
+    <strong style="font-size: 4rem; color: #f7f7f7; margin-bottom: 20px;">VISION</strong>
     <p style="font-size: 1.6rem; text-align: justify;">
-      To be the leading gateway in Mexico for global beauty and personal care brands, recognized for our excellence in brand building, nationwide reach, and ability to turn emerging products into consumer-recognized brands.
+      To be the leading gateway in Mexico for global beauty and personal care brands, recognized for our excellence in brand building, national reach, and ability to turn emerging products into consumer-recognized brands.
     </p>
   </div>
+</div>
 </div>
 </section>
 
