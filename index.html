@@ -192,6 +192,25 @@
       margin-bottom: 40px !important;
     }
   }
+  .linea-division {
+  position: absolute;
+  right: 0;
+  top: 20%;
+  bottom: 20%;
+  width: 5px;
+  background-color: #f7f7f7;
+  margin: auto;
+}
+
+/* Mobile: la línea se convierte en horizontal */
+@media (max-width: 768px) {
+  .linea-division {
+    position: static;
+    width: 60%;
+    height: 5px;
+    margin: 30px auto;
+  }
+}
 </style>
 </head>
 <body>
@@ -293,15 +312,15 @@ comercial.
     <p style="font-size: 1.6rem; text-align: justify;">
       Conectar a los consumidores mexicanos con marcas internacionales innovadoras y de alta calidad en las categorías de cosméticos y cuidado personal, a través de servicios excepcionales de distribución, marketing y gestión de marca. Estamos comprometidos con la creación de alianzas duraderas basadas en la confianza, el desempeño y un profundo entendimiento del mercado.
     </p>
-    <!-- Vertical line -->
-    <div style="position: absolute; right: 0; top: 20%; bottom: 20%; width: 5px; background-color: #f7f7f7; margin: auto;"></div>
+    <!-- Línea vertical (por defecto) -->
+    <div class="linea-division"></div>
   </div>
 
   <!-- Visión -->
   <div class="col-md-6 d-flex flex-column justify-content-start align-items-center text-center p-5">
     <strong style="font-size: 4rem; color: #f7f7f7; margin-bottom: 20px;">VISIÓN</strong>
     <p style="font-size: 1.6rem; text-align: justify;">
-      Ser la puerta de entrada líder en México para marcas globales de belleza y cuidado personal, reconocida por nuestra excelencia en construcción de marca, alcance nacional y capacidad para convertir productos emergentes en marcas reconocidas por los consumidores.
+       Ser la puerta de entrada líder en México para marcas globales de belleza y cuidado personal, reconocida por nuestra excelencia en construcción de marca, alcance nacional y capacidad para convertir productos emergentes en marcas reconocidas por los consumidores.
     </p>
   </div>
 </div>
@@ -356,7 +375,7 @@ comercial.
             <div class="col-lg-6 mb-4 mb-lg-0 d-flex justify-content-center align-items-center"
                  style="cursor: pointer;"
                  onclick="document.querySelector('#quehacemosCarousel').carouselNext()">
-              <img src="img/QueHacemos3.jpeg" alt="Qué Hacemos 3" style="width: 100%; height: auto; object-fit: cover;">
+              <img src="img/QueHacemos4.jpeg" alt="Qué Hacemos 3" style="width: 100%; height: auto; object-fit: cover;">
             </div>
             <div class="col-lg-6 d-flex align-items-center"
                  style="cursor: pointer;"
